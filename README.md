@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CS250 - Computational Thinking Project
 
-## Getting Started
+**Advanced Program in Computer Science (APCS) at University of Science, Vietnam National University Ho Chi Minh City (VNU-HCMUS)**
 
-First, run the development server:
+This repository contains the source code for the CS250 - Computational Thinking course project. It is a full-stack web application designed to assist travelers in Ho Chi Minh City by providing real-time location services, landmark information, AI-powered Q&A, landmark recognition, public transportation overlays, user accounts, and rating features.
+
+---
+
+## 🚀 Tech Stack
+
+This project is built with a modern, decoupled architecture:
+
+* **Frontend:** [Next.js](https://nextjs.org/) (React Framework)
+* **Backend:** [Flask](https://flask.palletsprojects.com/) (Python Micro-Framework)
+* **APIs:**
+    * [Google Maps Platform](https://mapsplatform.google.com/) for geospatial features.
+    * [Google Gemini](https://ai.google.dev/) for generative AI capabilities.
+
+---
+
+## 📂 Repository Structure
+
+The project is organized into two main directories:
+
+* `/frontend`: Contains the Next.js application for the user interface.
+* `/backend`: Contains the Python Flask server that handles business logic and serves as an API endpoint.
+
+---
+
+## 🏁 Getting Started
+
+Follow these instructions to set up and run the project on your local machine.
+
+### Prerequisites
+
+* [Node.js](https://nodejs.org/) (v18.x or later)
+* [Python](https://www.python.org/) (v3.10 or later)
+* `npm` or `yarn` package manager
+* `pip` and `venv` for Python package management
+
+### API Keys
+
+You will need API keys for the Google Maps and Gemini APIs. Create a `.env.local` file in both the `/frontend` and `/backend` directories and add your keys:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# In /frontend/.env.local
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_KEY_HERE
+NEXT_PUBLIC_GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+# In /backend/.env.local
+GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_KEY_HERE
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*(Note: Adjust the variable names above to match what you use in your application code.)*
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Backend Setup (Flask)
 
-## Learn More
+```bash
+# 1. Navigate to the backend directory
+cd backend
 
-To learn more about Next.js, take a look at the following resources:
+# 2. Create a virtual environment
+python -m venv venv
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 3. Activate the virtual environment
+# On Windows:
+.\venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 4. Install the required Python packages
+pip install -r requirements.txt
 
-## Deploy on Vercel
+# 5. Run the Flask server
+flask run
+```
+Your backend API should now be running on `http://127.0.0.1:5000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Frontend Setup (Next.js)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# 1. Open a new terminal and navigate to the frontend directory
+cd frontend
+
+# 2. Install Node.js dependencies
+npm install
+
+# 3. Run the frontend development server
+npm run dev
+```
+Your frontend application should now be running. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## 📜 License
+
+This project is intended for educational use.
+
+Please contact the authors before using the code in other applications.
