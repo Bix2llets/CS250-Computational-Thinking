@@ -17,7 +17,7 @@ async function fetchMockData() {
 
     let fetchResult = await fetch("http://localhost:5000/api/posts")
     if (!fetchResult.ok) {
-      throw Error;
+      throw new Error("Failed to fetch");
     }
     const data = await fetchResult.json()
     console.log(data)
