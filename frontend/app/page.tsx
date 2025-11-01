@@ -17,7 +17,7 @@ async function fetchMockData() {
 
     let fetchResult = await fetch("http://localhost:5000/api/posts")
     if (!fetchResult.ok) {
-      throw Error;
+      throw new Error("Failed to fetch");
     }
     const data = await fetchResult.json()
     console.log(data)
@@ -61,9 +61,8 @@ export default function Page() {
           <FieldLabel>
             This is the name
           </FieldLabel>
-          <Input placeholder = "Fill ur name here" required>
+          <Input placeholder = "Fill ur name here" required/>
           
-          </Input>
         </Field>
       </FieldGroup>
     </form>
